@@ -11,7 +11,7 @@ public:
         while(tempX){
             reverseX = (reverseX * 10) + (tempX % 10);
             tempX /= 10;
-	    }
+        }
         
         if( x != reverseX) answer = false;
         
