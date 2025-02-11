@@ -1,12 +1,12 @@
 ﻿class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-
+        # 回字串中最後一個單詞的長度
+        
         split_s = s.split()
-        max_len = 0
-        for word in split_s:
-            max_len = max(max_len, len(word))
-            
-        return max_len
+        return len(split_s[-1]) if split_s else 0
+        
+        
+        
 
 if __name__ in "__main__":
     
@@ -16,6 +16,8 @@ if __name__ in "__main__":
         {"input": " ", "output": 0},
         {"input": "a ", "output": 1},
         {"input": "   fly me   to   the moon  ", "output": 4},
+        {"input": "luffy is still joyboy", "output": 6},
+        {"input": "Today is a nice day", "output": 3},
     ]
     
     for question in question_list:
