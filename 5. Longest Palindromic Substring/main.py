@@ -32,5 +32,5 @@ if __name__ == '__main__':
     ]
     
     for question in question_list:
-        print(s.longestPalindrome(question['input']), question['output'])
+        print(s.longestPalindrome(question['input']),  question['output'])
     
