@@ -26,8 +26,8 @@ if __name__ == "__main__":
     ]
     
     for question in question_list:
-        print(s.maxArea(question["input"]), question["output"])
-        
+        result = s.maxArea(question["input"])
+        print(f"[ANS] question: {question['input']} => {result} (Expected: {question['output']}) => {'✅' if result == question['output'] else '❌'}")
         
         
         
