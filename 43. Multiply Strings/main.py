@@ -15,9 +15,6 @@
                 result += int_n1 * int_n2
                 
         return str(result)
-                
-                
-        
         
 if __name__ == "__main__":
     s = Solution()
