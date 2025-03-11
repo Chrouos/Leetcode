@@ -7,7 +7,6 @@ class TreeNode:
         self.left = left
         self.right = right
         
-        
     def list_to_tree(self, lst):
         if not list: None
         
@@ -50,7 +49,6 @@ if __name__ == "__main__":
         {"input": [1, None, 2, 3], "output": [1,3,2]},
         {"input": [1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9], "output": [4,2,6,5,7,1,3,9,8]}
     ]
-    
     
     for question in question_list:
         root = TreeNode().list_to_tree(question['input'])

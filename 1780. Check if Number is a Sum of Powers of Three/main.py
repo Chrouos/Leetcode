@@ -9,9 +9,6 @@
         return True
         
         
-        
-        
-        
 if __name__ == "__main__":
     sol = Solution()
     question_list = [
