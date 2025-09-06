@@ -1,6 +1,5 @@
 ﻿from typing import Optional, List
 
-# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -28,35 +27,31 @@ class TreeNode:
             index += 1
                 
         return root
-    
+
+
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
-        size = 0
-        if not root: return size
-        
-        def dfs(node, depth):
-            nonlocal size
-            if not node: return
-            
-            size = max(size, depth)
-            
-            dfs(node.left, depth + 1)
-            dfs(node.right, depth + 1)
-        
-        dfs(root, 1)
-        return size
-        
+        def isBST(node, low, high):
+            if not node: 
+                return True
+            if not (low < node.val < high): 
+                return False
+            return isBST(node.left, low, node.val) and isBST(node.right, node.val, high)
+
+        return isBST(root, float('-inf'), float('inf'))
+
 if __name__ == "__main__":
+    
     s = Solution()
     question_list = [
-        {"input": [[3,9,20,None,None,15,7]], "output": 3},
-        {"input": [[1,None,2]], "output": 2},
+        {"input": [2, 1, 3], "output": True},
+        {"input": [5, 1, 4, None, None, 3, 6], "output": False},
+        {"input": [5,4,6,None,None,3,7], "output": False}
     ]
-    
+
     for question in question_list:
-        p = TreeNode().list_to_tree(question['input'][0])
-        
-        output = s.maxDepth(p)
+        p = TreeNode().list_to_tree(question['input'])
+        output = s.isValidBST(p)
+
         print(f"[{output == question['output']}] input: {question['input']}, output: {output}, expected: {question['output']}")
-        
